@@ -1,0 +1,19 @@
+.schedule-settings{
+    column-count: 2;
+    display: flex;
+    column-width: 500px;
+    justify-content: center;
+    column-gap: 60px;
+}
+.mb-3{
+    width: 200px;
+}
+.schedule-desc{
+    text-align: center;
+    padding-top: 20px;
+}
+.schedule-list{
+    width: 40%;
+    padding-top: 10px;
+    font-size: 20px;
+}

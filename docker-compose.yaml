@@ -1,0 +1,38 @@
+version: '3.3'
+
+services:
+
+  application:
+    build:
+      dockerfile: Dockerfile
+    image: sem-work-image
+    user: root
+    container_name: sem-work-container-1
+    ports:
+      - "80:80"
+    depends_on:
+      - database
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/semester-work
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password
+
+  database:
+    build:
+      dockerfile: Database/Dockerfile
+    image:
+      postgres-1
+    container_name: postgres-container-1
+    ports:
+      - "5433:5432"
+    user: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=semester-work
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+
+volumes:
+  postgres_volume:
+    external: true

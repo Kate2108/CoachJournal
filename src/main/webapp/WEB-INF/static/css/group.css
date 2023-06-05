@@ -1,0 +1,23 @@
+.group-description{
+    text-align: center;
+    padding-top: 20px;
+}
+.group-list{
+    border-radius: 30px;
+    padding-left: 30px;
+    padding-top: 20px;
+    font-size: 20px;
+    width: 40%;
+}
+.settings{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.group-settings{
+    column-count: 3;
+    display: flex;
+    column-width: 350px;
+    justify-content: center;
+    column-gap: 30px;
+}
